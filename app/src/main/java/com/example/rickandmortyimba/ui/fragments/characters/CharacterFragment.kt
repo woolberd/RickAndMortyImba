@@ -40,7 +40,7 @@ class CharacterFragment : Fragment() {
 
     private fun setupObserves() {
         viewModel?.fetchCharacters()?.observe(viewLifecycleOwner) {
-            characterAdapter?.setList(it.results)
+            characterAdapter.setList(it.results)
         }
     }
 

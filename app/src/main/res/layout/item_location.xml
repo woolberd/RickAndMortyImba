@@ -46,7 +46,7 @@
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="@id/created"
                 app:layout_constraintTop_toBottomOf="@id/created"
-                tools:text="@string/created" />
+                tools:text="created" />
 
             <TextView
                 android:id="@+id/name"
@@ -66,7 +66,7 @@
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="@id/created"
                 app:layout_constraintTop_toBottomOf="@id/name"
-                tools:text="@string/name" />
+                tools:text="name" />
 
             <TextView
                 android:id="@+id/type"
@@ -87,7 +87,7 @@
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="@id/type"
                 app:layout_constraintTop_toBottomOf="@id/type"
-                tools:text="@string/air_date" />
+                tools:text="air_date" />
 
             <TextView
                 android:id="@+id/dimension"
@@ -109,7 +109,7 @@
                 android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="@id/type"
                 app:layout_constraintTop_toBottomOf="@id/dimension"
-                tools:text="@string/air_date" />
+                tools:text="air_date" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RickAndMortyImba</string>
+    <string name="episode">episode</string>
+    <string name="location">location</string>
+    <string name="characters">characters</string>
+    <string name="dimension">Dimension:</string>
+    <string name="type">Type:</string>
+    <string name="name">Name:</string>
+    <string name="created">Created:</string>
+    <string name="episode1">Episode:</string>
+    <string name="air_date">Air Date:</string>
+    <string name="last_known_location">Last known location:</string>
+    <string name="first_seen_in">First seen in:</string>
 </resources>

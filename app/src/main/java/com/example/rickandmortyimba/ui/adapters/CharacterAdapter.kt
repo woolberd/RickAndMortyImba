@@ -23,7 +23,8 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
             binding.itemName.text = characterModel.name
             binding.tvFirstSeeAddress.text = characterModel.status
             binding.tvAddress.text = characterModel.gender
-            Glide.with(binding.actionImage.context).load(characterModel.image).into(binding.actionImage)
+            Glide.with(binding.actionImage.context).load(characterModel.image)
+                .into(binding.actionImage)
         }
     }
 

@@ -16,7 +16,6 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>
 
     class LocationViewHolder(private val binding: ItemLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun onBind(locationModel: LocationModel) {
             binding.tvCreated.text = locationModel.created
             binding.tvName.text = locationModel.name
