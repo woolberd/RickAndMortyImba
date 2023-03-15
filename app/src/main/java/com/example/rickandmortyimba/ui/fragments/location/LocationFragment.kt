@@ -43,5 +43,4 @@ class LocationFragment : Fragment() {
             locationAdapter.setList(it.results)
         }
     }
-
 }

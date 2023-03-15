@@ -43,6 +43,4 @@ class EpisodeFragment : Fragment() {
             episodeAdapter.setList(it.results)
         }
     }
-
-
 }

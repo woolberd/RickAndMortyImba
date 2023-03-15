@@ -10,11 +10,13 @@
         android:name="com.example.rickandmortyimba.ui.fragments.characters.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" />
+
     <fragment
         android:id="@+id/episodeFragment"
         android:name="com.example.rickandmortyimba.ui.fragments.episode.EpisodeFragment"
         android:label="fragment_episode"
         tools:layout="@layout/fragment_episode" />
+
     <fragment
         android:id="@+id/locationFragment"
         android:name="com.example.rickandmortyimba.ui.fragments.location.LocationFragment"

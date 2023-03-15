@@ -43,5 +43,4 @@ class CharacterFragment : Fragment() {
             characterAdapter.setList(it.results)
         }
     }
-
 }
