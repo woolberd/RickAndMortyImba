@@ -32,7 +32,7 @@ class EpisodeFragment : Fragment() {
     }
 
     private fun initialize() {
-        binding.recyclerView.apply {
+        binding.episodeRecView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = episodeAdapter
         }

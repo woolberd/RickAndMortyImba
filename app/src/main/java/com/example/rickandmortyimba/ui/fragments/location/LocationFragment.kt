@@ -32,7 +32,7 @@ class LocationFragment : Fragment() {
     }
 
     private fun initialize() {
-        binding.recyclerView.apply {
+        binding.locationRecView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = locationAdapter
         }

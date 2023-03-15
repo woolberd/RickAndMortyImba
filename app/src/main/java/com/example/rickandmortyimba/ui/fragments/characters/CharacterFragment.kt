@@ -32,7 +32,7 @@ class CharacterFragment : Fragment() {
     }
 
     private fun initialize() {
-        binding.recyclerView.apply {
+        binding.characterRecView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = characterAdapter
         }
