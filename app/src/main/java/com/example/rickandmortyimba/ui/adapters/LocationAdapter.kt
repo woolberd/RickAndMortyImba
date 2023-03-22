@@ -2,25 +2,30 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyimba.databinding.ItemLocationBinding
 import com.example.rickandmortyimba.models.LocationModel
 
-class LocationAdapter : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
-    private var list: List<LocationModel> = ArrayList()
+class LocationAdapter(
+    val onLocationItemClick: (id : Int) -> Unit
+) : PagingDataAdapter<LocationModel, LocationAdapter.LocationViewHolder>(diffUtil) {
 
-    fun setList(list: List<LocationModel>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
-
-    class LocationViewHolder(private val binding: ItemLocationBinding) :
+    inner class LocationViewHolder(private val binding: ItemLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(locationModel: LocationModel) {
-            binding.tvCreated.text = locationModel.created
-            binding.tvName.text = locationModel.name
-            binding.tvDimension.text = locationModel.dimension
-            binding.tvType.text = locationModel.type
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let { it1 -> onLocationItemClick(it1.id) }
+            }
+        }
+
+        fun onBind(locationModel: LocationModel?) {
+            binding.tvCreated.text = locationModel?.created
+            binding.tvName.text = locationModel?.name
+            binding.tvDimension.text = locationModel?.dimension
+            binding.tvType.text = locationModel?.type
         }
     }
 
@@ -31,8 +36,26 @@ class LocationAdapter : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>
     }
 
     override fun onBindViewHolder(holder: LocationViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(getItem(position))
     }
 
-    override fun getItemCount(): Int = list.size
+    companion object {
+        private val diffUtil = object : DiffUtil.ItemCallback<LocationModel>() {
+            override fun areItemsTheSame(
+                oldItem: LocationModel,
+                newItem: LocationModel
+            )
+                    : Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: LocationModel,
+                newItem: LocationModel
+            )
+                    : Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
 }

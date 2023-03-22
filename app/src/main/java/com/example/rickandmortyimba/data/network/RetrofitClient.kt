@@ -15,7 +15,7 @@ class RetrofitClient {
         .writeTimeout(30, java.util.concurrent.TimeUnit.SECONDS)
         .build()
 
-    val retrofitClient = Retrofit.Builder()
+    private val retrofitClient = Retrofit.Builder()
         .baseUrl("https://rickandmortyapi.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)

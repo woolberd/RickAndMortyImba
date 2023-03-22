@@ -2,33 +2,18 @@ package com.example.rickandmortyimba.ui.fragments.location
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.rickandmortyimba.App
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.example.rickandmortyimba.models.LocationModel
-import com.example.rickandmortyimba.models.RickAndMortyResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.rickandmortyimba.repositories.LocationRepository
 
 class LocationViewModel : ViewModel() {
 
-    fun fetchLocation(): MutableLiveData<RickAndMortyResponse<LocationModel>> {
-        val data: MutableLiveData<RickAndMortyResponse<LocationModel>> = MutableLiveData()
-        App.locationApiService?.fetchLocation()
-            ?.enqueue(object : Callback<RickAndMortyResponse<LocationModel>> {
-                override fun onResponse(
-                    call: Call<RickAndMortyResponse<LocationModel>>,
-                    response: Response<RickAndMortyResponse<LocationModel>>
-                ) {
-                    data.value = response.body()
-                }
+    private val locationRepository = LocationRepository()
 
-                override fun onFailure(
-                    call: Call<RickAndMortyResponse<LocationModel>>,
-                    t: Throwable
-                ) {
-                    data.value = null
-                }
-            })
-        return data
+    fun fetchLocations() = locationRepository.fetchLocations().cachedIn(viewModelScope)
+
+    fun fetchLocation(id: Int): MutableLiveData<LocationModel>{
+        return locationRepository.fetchLocation(id)
     }
 }

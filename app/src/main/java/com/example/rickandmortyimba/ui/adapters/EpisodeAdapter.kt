@@ -2,26 +2,30 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyimba.databinding.ItemEpisodeBinding
 import com.example.rickandmortyimba.models.EpisodeModel
 
-class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() {
+class EpisodeAdapter(
+    val onEpisodeItemClick: (id : Int) -> Unit
+) : PagingDataAdapter<EpisodeModel, EpisodeAdapter.EpisodeViewHolder>(diffUtil) {
 
-    private var list: List<EpisodeModel> = ArrayList()
-
-    fun setList(list: List<EpisodeModel>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
-
-    class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
+    inner class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(episodeModel: EpisodeModel) {
-            binding.tvEpisode.text = episodeModel.episode
-            binding.tvAirDate.text = episodeModel.airDate
-            binding.tvCreated.text = episodeModel.created
-            binding.tvName.text = episodeModel.name
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let { it1 -> onEpisodeItemClick(it1.id) }
+            }
+        }
+
+        fun onBind(episodeModel: EpisodeModel?) {
+            binding.tvEpisode.text = episodeModel?.episode
+            binding.tvAirDate.text = episodeModel?.airDate
+            binding.tvCreated.text = episodeModel?.created
+            binding.tvName.text = episodeModel?.name
         }
     }
 
@@ -32,8 +36,26 @@ class EpisodeAdapter : RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() 
     }
 
     override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(getItem(position))
     }
 
-    override fun getItemCount(): Int = list.size
+    companion object {
+        private val diffUtil = object : DiffUtil.ItemCallback<EpisodeModel>() {
+            override fun areItemsTheSame(
+                oldItem: EpisodeModel,
+                newItem: EpisodeModel
+            )
+                    : Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: EpisodeModel,
+                newItem: EpisodeModel
+            )
+                    : Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
 }

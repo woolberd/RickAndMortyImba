@@ -1,9 +1,11 @@
 package com.example.rickandmortyimba.models
 
-import androidx.annotation.Dimension
 import com.google.gson.annotations.SerializedName
 
 data class LocationModel(
+
+    @SerializedName("id")
+    val id: Int,
 
     @SerializedName("created")
     val created: String,

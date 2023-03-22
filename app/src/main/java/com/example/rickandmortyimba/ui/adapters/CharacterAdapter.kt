@@ -2,29 +2,31 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.rickandmortyimba.databinding.ItemCharacterBinding
+import com.example.rickandmortyimba.extention.setImage
 import com.example.rickandmortyimba.models.CharacterModel
 
-class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
+class CharacterAdapter(
+    val onCharacterItemClick: (id : Int) -> Unit
+) : PagingDataAdapter<CharacterModel, CharacterAdapter.CharacterViewHolder>(diffUtil) {
 
-    private var list: List<CharacterModel> = ArrayList()
-
-    fun setList(list: List<CharacterModel>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
-
-    class CharacterViewHolder(private val binding: ItemCharacterBinding) :
+    inner class CharacterViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(characterModel: CharacterModel) {
-            binding.itemName.text = characterModel.name
-            binding.tvFirstSeeAddress.text = characterModel.status
-            binding.tvAddress.text = characterModel.gender
-            Glide.with(binding.actionImage.context).load(characterModel.image)
-                .into(binding.actionImage)
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let { it1 -> onCharacterItemClick(it1.id) }
+            }
+        }
+
+        fun onBind(characterModel: CharacterModel?) {
+            binding.itemName.text = characterModel?.name
+            binding.tvFirstSeeAddress.text = characterModel?.status
+            binding.tvAddress.text = characterModel?.gender
+            binding.actionImage.setImage(characterModel!!.image)
         }
     }
 
@@ -35,10 +37,24 @@ class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.CharacterViewHold
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(getItem(position))
     }
 
-    override fun getItemCount(): Int {
-        return list.size
+    companion object{
+        private val diffUtil = object : DiffUtil.ItemCallback<CharacterModel>(){
+            override fun areItemsTheSame(
+                oldItem: CharacterModel,
+                newItem: CharacterModel
+            ): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: CharacterModel,
+                newItem: CharacterModel
+            ): Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
     }
 }
