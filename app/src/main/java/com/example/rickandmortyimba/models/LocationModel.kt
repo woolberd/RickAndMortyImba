@@ -1,10 +1,14 @@
 package com.example.rickandmortyimba.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class LocationModel(
 
     @SerializedName("id")
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
 
     @SerializedName("created")

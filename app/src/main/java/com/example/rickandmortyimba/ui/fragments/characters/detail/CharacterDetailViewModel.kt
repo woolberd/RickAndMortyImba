@@ -1,21 +1,19 @@
-package com.example.rickandmortyimba.ui.fragments.characters
+package com.example.rickandmortyimba.ui.fragments.characters.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.paging.cachedIn
 import com.example.rickandmortyimba.models.CharacterModel
 import com.example.rickandmortyimba.repositories.CharacterRepository
+import com.example.rickandmortyimba.repositories.LocationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CharacterViewModel @Inject constructor(
+class CharacterDetailViewModel @Inject constructor(
     private val characterRepository: CharacterRepository
-) : ViewModel() {
+) : ViewModel(){
 
-    fun fetchCharacters() = characterRepository.fetchCharacters()
-//        .cachedIn(viewModelScope)
-
-    fun getAll() = characterRepository.getAll()
+    fun fetchCharacter(id: Int): MutableLiveData<CharacterModel> {
+        return characterRepository.fetchCharacter(id)
+    }
 }

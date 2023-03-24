@@ -2,8 +2,8 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyimba.databinding.ItemCharacterBinding
 import com.example.rickandmortyimba.extention.setImage
@@ -11,14 +11,14 @@ import com.example.rickandmortyimba.models.CharacterModel
 
 class CharacterAdapter(
     val onCharacterItemClick: (id : Int) -> Unit
-) : PagingDataAdapter<CharacterModel, CharacterAdapter.CharacterViewHolder>(diffUtil) {
+) : ListAdapter<CharacterModel, CharacterAdapter.CharacterViewHolder>(diffUtil) {
 
     inner class CharacterViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let { it1 -> onCharacterItemClick(it1.id) }
+                getItem(adapterPosition)?.let { it1 -> onCharacterItemClick(it1.id) }
             }
         }
 

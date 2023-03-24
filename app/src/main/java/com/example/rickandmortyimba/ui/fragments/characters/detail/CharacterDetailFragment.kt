@@ -1,5 +1,7 @@
-package com.example.rickandmortyimba.ui.fragments.characters
+package com.example.rickandmortyimba.ui.fragments.characters.detail
 
+import android.content.Context
+import android.net.ConnectivityManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -8,12 +10,15 @@ import com.example.rickandmortyimba.R
 import com.example.rickandmortyimba.base.BaseFragment
 import com.example.rickandmortyimba.databinding.FragmentDetailCharacterBinding
 import com.example.rickandmortyimba.extention.setImage
+import com.example.rickandmortyimba.ui.fragments.characters.CharacterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CharacterDetailFragment
-    : BaseFragment<FragmentDetailCharacterBinding, CharacterViewModel>(R.layout.fragment_detail_character) {
+    : BaseFragment<FragmentDetailCharacterBinding, CharacterDetailViewModel>(R.layout.fragment_detail_character) {
 
     override val binding by viewBinding(FragmentDetailCharacterBinding::bind)
-    override val viewModel: CharacterViewModel by viewModels()
+    override val viewModel: CharacterDetailViewModel by viewModels()
     private val args by navArgs<CharacterDetailFragmentArgs>()
 
     override fun setupObserves() {

@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/detailCharacterFragment"
-        android:name="com.example.rickandmortyimba.ui.fragments.characters.CharacterDetailFragment"
+        android:name="com.example.rickandmortyimba.ui.fragments.characters.detail.CharacterDetailFragment"
         android:label="fragment_detail_character"
         tools:layout="@layout/fragment_detail_character" >
         <argument
@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/detailEpisodeFragment"
-        android:name="com.example.rickandmortyimba.ui.fragments.episode.EpisodeDetailFragment"
+        android:name="com.example.rickandmortyimba.ui.fragments.episode.detail.EpisodeDetailFragment"
         android:label="fragment_detail_episode"
         tools:layout="@layout/fragment_detail_episode" >
         <argument
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/detailLocationFragment"
-        android:name="com.example.rickandmortyimba.ui.fragments.location.LocationDetailFragment"
+        android:name="com.example.rickandmortyimba.ui.fragments.location.detail.LocationDetailFragment"
         android:label="fragment_detail_location"
         tools:layout="@layout/fragment_detail_location" >
         <argument

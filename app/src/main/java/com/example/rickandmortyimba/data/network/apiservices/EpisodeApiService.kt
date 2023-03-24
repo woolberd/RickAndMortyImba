@@ -10,9 +10,9 @@ import retrofit2.http.Query
 interface EpisodeApiService {
 
     @GET("api/episode")
-    suspend fun fetchEpisodes(
-        @Query("page") page : Int
-    ): RickAndMortyResponse<EpisodeModel>
+    fun fetchEpisodes(
+//        @Query("page") page : Int
+    ): Call <RickAndMortyResponse<EpisodeModel>>
 
     @GET("api/episode/{id}")
     fun fetchEpisode(

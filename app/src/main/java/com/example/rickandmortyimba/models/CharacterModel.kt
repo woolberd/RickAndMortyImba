@@ -1,10 +1,14 @@
 package com.example.rickandmortyimba.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class CharacterModel(
 
     @SerializedName("id")
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
 
     @SerializedName("status")
@@ -18,4 +22,6 @@ data class CharacterModel(
 
     @SerializedName("gender")
     val gender: String
+
+
 )

@@ -2,22 +2,22 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyimba.databinding.ItemEpisodeBinding
 import com.example.rickandmortyimba.models.EpisodeModel
 
 class EpisodeAdapter(
     val onEpisodeItemClick: (id : Int) -> Unit
-) : PagingDataAdapter<EpisodeModel, EpisodeAdapter.EpisodeViewHolder>(diffUtil) {
+) : ListAdapter<EpisodeModel, EpisodeAdapter.EpisodeViewHolder>(diffUtil) {
 
     inner class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let { it1 -> onEpisodeItemClick(it1.id) }
+                getItem(adapterPosition)?.let { it1 -> onEpisodeItemClick(it1.id) }
             }
         }
 

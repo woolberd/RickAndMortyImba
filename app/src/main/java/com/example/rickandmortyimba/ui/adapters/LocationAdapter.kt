@@ -2,22 +2,22 @@ package com.example.rickandmortyimba.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmortyimba.databinding.ItemLocationBinding
 import com.example.rickandmortyimba.models.LocationModel
 
 class LocationAdapter(
     val onLocationItemClick: (id : Int) -> Unit
-) : PagingDataAdapter<LocationModel, LocationAdapter.LocationViewHolder>(diffUtil) {
+) : ListAdapter<LocationModel, LocationAdapter.LocationViewHolder>(diffUtil) {
 
     inner class LocationViewHolder(private val binding: ItemLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let { it1 -> onLocationItemClick(it1.id) }
+                getItem(adapterPosition)?.let { it1 -> onLocationItemClick(it1.id) }
             }
         }
 

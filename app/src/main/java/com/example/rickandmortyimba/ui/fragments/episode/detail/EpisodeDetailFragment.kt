@@ -1,4 +1,4 @@
-package com.example.rickandmortyimba.ui.fragments.episode
+package com.example.rickandmortyimba.ui.fragments.episode.detail
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -7,12 +7,15 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.rickandmortyimba.R
 import com.example.rickandmortyimba.base.BaseFragment
 import com.example.rickandmortyimba.databinding.FragmentDetailEpisodeBinding
+import com.example.rickandmortyimba.ui.fragments.episode.EpisodeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EpisodeDetailFragment
-    : BaseFragment<FragmentDetailEpisodeBinding, EpisodeViewModel>(R.layout.fragment_detail_episode) {
+    : BaseFragment<FragmentDetailEpisodeBinding, EpisodeDetailViewModel>(R.layout.fragment_detail_episode) {
 
     override val binding by viewBinding(FragmentDetailEpisodeBinding::bind)
-    override val viewModel: EpisodeViewModel by viewModels()
+    override val viewModel: EpisodeDetailViewModel by viewModels()
     private val args by navArgs<EpisodeDetailFragmentArgs>()
 
     override fun setupObserves() {

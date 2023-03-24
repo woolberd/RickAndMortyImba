@@ -1,21 +1,19 @@
-package com.example.rickandmortyimba.ui.fragments.episode
+package com.example.rickandmortyimba.ui.fragments.episode.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.paging.cachedIn
 import com.example.rickandmortyimba.models.EpisodeModel
 import com.example.rickandmortyimba.repositories.EpisodeRepository
+import com.example.rickandmortyimba.repositories.LocationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class EpisodeViewModel @Inject constructor(
+class EpisodeDetailViewModel @Inject constructor(
     private val episodeRepository: EpisodeRepository
 ) : ViewModel() {
 
-    fun fetchEpisodes() = episodeRepository.fetchEpisodes()
-//        .cachedIn(viewModelScope)
-
-    fun getAll() = episodeRepository.getAll()
+    fun fetchEpisode(id: Int): MutableLiveData<EpisodeModel> {
+        return episodeRepository.fetchEpisode(id)
+    }
 }
