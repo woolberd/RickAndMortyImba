@@ -1,7 +1,6 @@
 package com.example.rickandmortyimba.ui.fragments.characters
 
 import android.content.Context
-import android.content.Context.CONNECTIVITY_SERVICE
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.widget.Toast
@@ -80,5 +79,4 @@ class CharacterFragment
             )
         )
     }
-
 }

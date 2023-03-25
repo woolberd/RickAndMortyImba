@@ -19,25 +19,25 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/action_image"
+                android:id="@+id/action_image_character"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_name_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
                 android:text="@string/name"
                 android:textColor="#686666"
                 android:textSize="11sp"
-                app:layout_constraintStart_toEndOf="@id/action_image"
+                app:layout_constraintStart_toEndOf="@id/action_image_character"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/item_name"
+                android:id="@+id/item_name_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -45,33 +45,33 @@
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/action_image"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintStart_toEndOf="@id/action_image_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_character"
                 tools:text="Rick Sanchez" />
 
             <TextView
-                android:id="@+id/tv_location"
+                android:id="@+id/tv_location_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
+                android:layout_marginBottom="6dp"
                 android:text="@string/last_known_location"
                 android:textColor="#686666"
                 android:textSize="11sp"
-                android:layout_marginBottom="6dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/action_image"
+                app:layout_constraintStart_toEndOf="@id/action_image_character"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_address"
+                android:id="@+id/tv_address_character"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/tv_location"
-                app:layout_constraintTop_toBottomOf="@id/tv_location"
+                app:layout_constraintStart_toStartOf="@id/tv_location_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_location_character"
                 tools:text="Nuptia 4" />
 
             <TextView
@@ -83,8 +83,8 @@
                 android:textColor="#686666"
                 android:textSize="11sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/tv_address"
-                app:layout_constraintTop_toBottomOf="@id/tv_address" />
+                app:layout_constraintStart_toStartOf="@id/tv_address_character"
+                app:layout_constraintTop_toBottomOf="@id/tv_address_character" />
 
             <TextView
                 android:id="@+id/tv_first_see_address"

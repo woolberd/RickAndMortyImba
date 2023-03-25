@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.rickandmortyimba.data.db.daos.LocationDao
 import com.example.rickandmortyimba.data.network.apiservices.LocationApiService
-import com.example.rickandmortyimba.models.CharacterModel
 import com.example.rickandmortyimba.models.LocationModel
 import com.example.rickandmortyimba.models.RickAndMortyResponse
 import retrofit2.Call

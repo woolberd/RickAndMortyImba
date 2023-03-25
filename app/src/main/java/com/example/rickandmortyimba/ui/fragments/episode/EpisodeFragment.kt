@@ -5,7 +5,6 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -14,7 +13,6 @@ import com.example.rickandmortyimba.base.BaseFragment
 import com.example.rickandmortyimba.databinding.FragmentEpisodeBinding
 import com.example.rickandmortyimba.ui.adapters.EpisodeAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class EpisodeFragment :

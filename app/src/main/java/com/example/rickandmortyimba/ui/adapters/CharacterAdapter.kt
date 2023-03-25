@@ -23,10 +23,10 @@ class CharacterAdapter(
         }
 
         fun onBind(characterModel: CharacterModel?) {
-            binding.itemName.text = characterModel?.name
+            binding.itemNameCharacter.text = characterModel?.name
             binding.tvFirstSeeAddress.text = characterModel?.status
-            binding.tvAddress.text = characterModel?.gender
-            binding.actionImage.setImage(characterModel!!.image)
+            binding.tvAddressCharacter.text = characterModel?.gender
+            binding.actionImageCharacter.setImage(characterModel!!.image)
         }
     }
 

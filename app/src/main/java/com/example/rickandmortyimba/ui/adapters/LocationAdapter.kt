@@ -22,10 +22,10 @@ class LocationAdapter(
         }
 
         fun onBind(locationModel: LocationModel?) {
-            binding.tvCreated.text = locationModel?.created
-            binding.tvName.text = locationModel?.name
+            binding.tvCreatedLocation.text = locationModel?.created
+            binding.tvNameLocation.text = locationModel?.name
             binding.tvDimension.text = locationModel?.dimension
-            binding.tvType.text = locationModel?.type
+            binding.tvTypeLocation.text = locationModel?.type
         }
     }
 

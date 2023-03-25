@@ -7,7 +7,6 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.rickandmortyimba.R
 import com.example.rickandmortyimba.base.BaseFragment
 import com.example.rickandmortyimba.databinding.FragmentDetailEpisodeBinding
-import com.example.rickandmortyimba.ui.fragments.episode.EpisodeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

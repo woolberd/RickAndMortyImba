@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rickandmortyimba.models.EpisodeModel
 import com.example.rickandmortyimba.repositories.EpisodeRepository
-import com.example.rickandmortyimba.repositories.LocationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

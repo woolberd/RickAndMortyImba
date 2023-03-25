@@ -21,7 +21,8 @@ data class CharacterModel(
     val image: String,
 
     @SerializedName("gender")
-    val gender: String
+    val gender: String,
 
-
+    @SerializedName("origin")
+    val origin: Any
 )

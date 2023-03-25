@@ -1,7 +1,5 @@
 package com.example.rickandmortyimba.ui.fragments.characters.detail
 
-import android.content.Context
-import android.net.ConnectivityManager
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -10,7 +8,6 @@ import com.example.rickandmortyimba.R
 import com.example.rickandmortyimba.base.BaseFragment
 import com.example.rickandmortyimba.databinding.FragmentDetailCharacterBinding
 import com.example.rickandmortyimba.extention.setImage
-import com.example.rickandmortyimba.ui.fragments.characters.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

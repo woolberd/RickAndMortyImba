@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.rickandmortyimba.data.db.daos.EpisodeDao
 import com.example.rickandmortyimba.data.network.apiservices.EpisodeApiService
-import com.example.rickandmortyimba.models.CharacterModel
 import com.example.rickandmortyimba.models.EpisodeModel
 import com.example.rickandmortyimba.models.RickAndMortyResponse
 import retrofit2.Call

@@ -24,8 +24,8 @@ class EpisodeAdapter(
         fun onBind(episodeModel: EpisodeModel?) {
             binding.tvEpisode.text = episodeModel?.episode
             binding.tvAirDate.text = episodeModel?.airDate
-            binding.tvCreated.text = episodeModel?.created
-            binding.tvName.text = episodeModel?.name
+            binding.tvCreatedEpisode.text = episodeModel?.created
+            binding.tvNameEpisode.text = episodeModel?.name
         }
     }
 

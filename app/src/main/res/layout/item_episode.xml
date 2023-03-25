@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/action_image"
+                android:id="@+id/action_image_episode"
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/img_1"
@@ -27,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/created"
+                android:id="@+id/created_episode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
@@ -35,51 +35,51 @@
                 android:text="@string/created"
                 android:textColor="#686666"
                 android:textSize="8sp"
-                app:layout_constraintStart_toEndOf="@id/action_image"
+                app:layout_constraintStart_toEndOf="@id/action_image_episode"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/tv_created"
+                android:id="@+id/tv_created_episode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="@id/created"
-                app:layout_constraintTop_toBottomOf="@id/created"
+                app:layout_constraintStart_toStartOf="@id/created_episode"
+                app:layout_constraintTop_toBottomOf="@id/created_episode"
                 tools:text="@string/created" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/name_episode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textColor="#686666"
                 android:textSize="8sp"
-                app:layout_constraintStart_toStartOf="@id/tv_created"
-                app:layout_constraintTop_toBottomOf="@id/tv_created"
+                app:layout_constraintStart_toStartOf="@id/tv_created_episode"
+                app:layout_constraintTop_toBottomOf="@id/tv_created_episode"
                 tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_name_episode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="11sp"
-                app:layout_constraintStart_toStartOf="@id/created"
-                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="@id/created_episode"
+                app:layout_constraintTop_toBottomOf="@id/name_episode"
                 tools:text="@string/name" />
 
             <TextView
                 android:id="@+id/air_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_episode"
                 android:text="@string/air_date"
                 android:textColor="#686666"
                 android:textSize="8sp"
                 android:layout_marginStart="7dp"
-                app:layout_constraintStart_toEndOf="@id/action_image"
+                app:layout_constraintStart_toEndOf="@id/action_image_episode"
                 tools:ignore="SmallSp" />
 
             <TextView
@@ -100,7 +100,7 @@
                 android:textColor="#686666"
                 android:textSize="8sp"
                 android:layout_marginStart="7dp"
-                app:layout_constraintStart_toEndOf="@id/action_image"
+                app:layout_constraintStart_toEndOf="@id/action_image_episode"
                 app:layout_constraintTop_toBottomOf="@id/tv_air_date"
                 tools:ignore="SmallSp" />
 
